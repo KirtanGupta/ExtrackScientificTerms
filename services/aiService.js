@@ -29,10 +29,10 @@ export async function getAIResponse(prompt) {
   const response = await groq.chat.completions.create({
     model: MODEL,
     messages: [
-      { role: "system", content: "You are a helpful assistant." },
+      { role: "system", content: "You are an assistant that extracts scientific terms from a block of text. When given a document, respond with a list of scientific terms mentioned in the text, separated by commas. Do not add any additional commentary, explanation, or formatting." },
       { role: "user", content: prompt }
     ],
-    temperature: 0.7,
+    temperature: 0.2,
   });
 
   return response.choices[0].message.content;

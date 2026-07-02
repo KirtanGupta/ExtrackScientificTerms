@@ -1,10 +1,11 @@
 {
   "name": "openai_llm(testing)",
   "version": "1.0.0",
-  "description": "",
+  "description": "A basic web application built with Node.js and Groq API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,13 @@
     "express": "^5.2.1",
     "groq-sdk": "^0.37.0",
     "openai": "^6.25.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KirtanGupta/AI-LLM-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KirtanGupta/AI-LLM-app/issues"
+  },
+  "homepage": "https://github.com/KirtanGupta/AI-LLM-app#readme"
 }

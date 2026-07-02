@@ -5,13 +5,17 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    const { prompt } = req.body;
+    // log body for debugging
+    console.log('api/ai received body:', req.body);
 
-    if (!prompt) {
-      return res.status(400).json({ error: "Prompt is required" });
+    // support both `text` and legacy `prompt` field
+    const text = req.body.text ?? req.body.prompt;
+
+    if (!text || typeof text !== 'string' || text.trim().length === 0) {
+      return res.status(400).json({ error: "Text is required" });
     }
 
-    const result = await getAIResponse(prompt);
+    const result = await getAIResponse(text);
 
     res.json({ success: true, output: result });
   } catch (error) {
